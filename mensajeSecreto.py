@@ -1,3 +1,5 @@
+import os
+
 fichero = open('mensajeEncriptado.txt')
 lineas = fichero.readlines()
 LineaMensaje = []
@@ -27,14 +29,20 @@ for i in range(0,len(arreglo)):
                 aux=aux+1
     
             
-        print ("".join(arreglo))
 cadenaReducida="".join(arreglo)
-print(cadenaReducida)
-print(LineaMensaje[1])
-pala="".join(LineaMensaje[1])
 
-print (pala in cadenaReducida)
-print ("CeseAlFuego" in "XcamakCeseAlFuegoDLKmN")
+file = open("mensajeDescifrado.txt", "w")
+
+print(type(LineaMensaje[2]))
+print(type(cadenaReducida))
+
+existeM1=LineaMensaje[1] in cadenaReducida
+existeM2=LineaMensaje[2] in cadenaReducida
+
+file.write(str(existeM1) + os.linesep)
+file.write(str(existeM2))
+file.close()
+
 
     
 
